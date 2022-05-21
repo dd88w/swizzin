@@ -42,7 +42,7 @@ Type=simple
 User=%i
 Group=%i
 ExecStartPre=-/bin/mkdir -p /home/%i/cloud/
-ExecStart=/usr/bin/rclone mount gdrive: /home/%i/cloud/ \
+ExecStart=/usr/bin/rclone mount synology: /home/%i/cloud/ \
   --user-agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36' \
   --config /home/%i/.config/rclone/rclone.conf \
   --use-mmap \
@@ -69,4 +69,4 @@ echo_progress_done
 
 touch /install/.rclone.lock
 echo_success "Rclone installed"
-echo_info "Setup Rclone remote named \"gdrive\" And run sudo systemctl start rclone@username.service"
+echo_info "Setup Rclone remote named \"synology\" And run sudo systemctl start rclone@username.service"
